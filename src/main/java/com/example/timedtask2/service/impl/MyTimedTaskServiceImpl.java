@@ -50,8 +50,8 @@ public class MyTimedTaskServiceImpl extends ServiceImpl<MyTimedTaskMapper, MyTim
 
     @Override
     public Boolean editTimedTask(MyTimedTask myTimedTask) {
-        MyTimedTask myTimedTask2 = myTimedTaskMapper.selectById(myTimedTask.getId());
         int i = myTimedTaskMapper.updateById(myTimedTask);
+        MyTimedTask myTimedTask2 = myTimedTaskMapper.selectById(myTimedTask.getId());
         if(i <= 0){
             return false;
         }
